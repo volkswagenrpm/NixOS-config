@@ -26,7 +26,6 @@
 	gnome-tweaks
 	gnome-extension-manager
 	sassc
-	glib
 	gearlever
 	ripgrep
 	fd
@@ -78,6 +77,14 @@
 	vscode
 	vscodium
 	inkscape
+	fortune
+	heroic
+	lutris
+	mangohud
+	protonup-qt
+	wget
+	unzip
+	zip
 	# KDE Packages
 	kdePackages.kdenlive
 	# neovim plugins
@@ -158,6 +165,25 @@
 
       # Enable the usage of unfree software/packages
       nixpkgs.config.allowUnfree = true;
+
+      # Setup steam
+      programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true; # Optional: for Remote Play
+        dedicatedServer.openFirewall = true; # Optional: for Dedicated Servers
+        localNetworkGameTransfers.openFirewall = true; # Optional: for Local Network Transfers
+      };
+
+      # Enable gamemode
+      programs.gamemode.enable = true;
+
+      # Enable gamescope
+      programs.steam.gamescopeSession.enable = true;
+
+      # Install/Enable proton ge
+      programs.steam.extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
 
     };
 
