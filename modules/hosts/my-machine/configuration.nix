@@ -18,7 +18,6 @@
 	cava
 	cmatrix
 	git
-	kitty
 	whitesur-icon-theme
 	whitesur-cursors
 	librsvg
@@ -34,6 +33,53 @@
 	lazygit
 	gcc
 	gnumake
+	unimatrix
+	fzf
+	bat
+	tldr
+	httpie
+	zoxide
+	tmux
+	glances
+	ranger
+	gdu
+	hollywood
+	lolcat
+	cool-retro-term
+	asciiquarium
+	mission-center
+	obsidian
+	joplin-desktop
+	super-productivity
+	ulauncher
+	localsend
+	gimp
+	obs-studio
+	amberol
+	vlc
+	pipes
+	cbonsai
+	pywal
+	chafa
+	peaclock
+	glances
+	pokemon-colorscripts
+	genact
+	ghostty
+	kitty
+	tty-clock
+	libreoffice
+	thunderbird
+	emacs
+	vim
+	vis
+	krita
+	audacity
+	vscode
+	vscodium
+	inkscape
+	# KDE Packages
+	kdePackages.kdenlive
 	# neovim plugins
 
 	vimPlugins.LazyVim
@@ -99,12 +145,19 @@
       services.displayManager.sddm.wayland.enable = true;
 
       # Enable GNOME
-      services.xserver.desktopManager.gnome.enable = true;
       services.xserver.enable = true;
+      services.xserver.desktopManager.gnome.enable = true;
 
-      # Fix/Disable Network disconnects when closing the lid of the laptop
+      # Fix/Disable network disconnects when closing the lid of laptop
       services.logind.lidSwitch = "ignore";
       services.logind.lidSwitchDocked = "ignore";
+      services.logind.lidSwitchExternalPower = "ignore";
+
+      # Enable Flatpak
+      services.flatpak.enable = true;
+
+      # Enable the usage of unfree software/packages
+      nixpkgs.config.allowUnfree = true;
 
     };
 
