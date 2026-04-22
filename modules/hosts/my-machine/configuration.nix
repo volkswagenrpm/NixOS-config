@@ -18,6 +18,16 @@
 	cava
 	cmatrix
 	git
+	kitty
+	whitesur-icon-theme
+	whitesur-cursors
+	librsvg
+	glib
+	adwaita-icon-theme
+	gnome-tweaks
+	gnome-extension-manager
+	sassc
+	glib
       ];
       programs.firefox.enable = true;
 
@@ -26,9 +36,9 @@
       system.stateVersion = "25.11";
 
       # you need a user, lol
-      users.users.dude = {
+      users.users.terminator = {
         isNormalUser = true;
-        description = "dude";
+        description = "terminator";
         extraGroups = [
           "networkmanager"
           "wheel"
@@ -74,12 +84,14 @@
       # printing
       services.printing.enable = true;
 
-      # Enable KDE
-      services.desktopManager.plasma6.enable = true;
 
       # Enable SDDM
       services.displayManager.sddm.enable = true;
       services.displayManager.sddm.wayland.enable = true;
+
+      # Enable GNOME
+      services.xserver.desktopManager.gnome.enable = true;
+      services.xserver.enable = true;
 
     };
 
