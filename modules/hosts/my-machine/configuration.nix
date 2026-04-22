@@ -102,6 +102,10 @@
       services.xserver.desktopManager.gnome.enable = true;
       services.xserver.enable = true;
 
+      # Fix/Disable Network disconnects when closing the lid of the laptop
+      services.logind.lidSwitch = "ignore";
+      services.logind.lidSwitchDocked = "ignore";
+
     };
 
 }
