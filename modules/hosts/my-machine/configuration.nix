@@ -28,6 +28,13 @@
 	gnome-extension-manager
 	sassc
 	glib
+	gearlever
+	ripgrep
+	fd
+	lazygit
+	# neovim plugins
+
+	vimPlugins.LazyVim
       ];
       programs.firefox.enable = true;
 
