@@ -32,6 +32,8 @@
 	ripgrep
 	fd
 	lazygit
+	gcc
+	gnumake
 	# neovim plugins
 
 	vimPlugins.LazyVim
