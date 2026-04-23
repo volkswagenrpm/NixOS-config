@@ -1,6 +1,4 @@
-{ self, inputs, ... }: {
-
-  flake.nixosModules.myMachineHardware = { config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 {
   imports =
@@ -29,6 +27,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-};
 
 }
